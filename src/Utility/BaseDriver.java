@@ -1,5 +1,6 @@
 package Utility;
 
+import ElementsPage.Elements;
 import ElementsPage.Parent;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +52,19 @@ public class BaseDriver {
     public void afterMethod(ITestResult result){
         logger4j.info(result.getName() + " test method finished " + (result.getStatus() == 1 ? " passed " : "fail"));
         logger4j.warn("warning message testing has finished");
+    }
+
+
+    public static void LoginTest(){
+        Elements el = new Elements();
+
+        el.Click(el.login);
+        Parent.ActionsSendKeys("rkaya@gmail.com");
+        Parent.RobotTAB(1);
+        Parent.ActionsSendKeys("12345rk");
+        el.Click(el.loginButton);
+
+        el.Assertion(el.logout,"out");
     }
 
 }
