@@ -4,12 +4,6 @@
 
     <test name="myTest1">
 
-        <groups>
-            <run>
-                <include name="Smoke Test"></include>
-            </run>
-        </groups>
-
         <classes>
             <class name="Mustafa.mustafa"> </class>
         </classes>
