@@ -9,8 +9,8 @@ public class mustafa extends BaseDriver {
 
     @Test(priority = 1 , groups = {"Smoke Test" , "UserRegistiration"})
     public void Register(){
-        Elements el = new Elements();
 
+        Elements el = new Elements();
         el.Click(el.register);
         el.SendKeys(el.firstName,"Raperin");
         Parent.ActionsSendKeys("Kaya");
@@ -31,10 +31,14 @@ public class mustafa extends BaseDriver {
         el.Click(el.registerButton);
 
         el.Assertion(el.verification,"completed");
+        el.logout.click();
     }
 
     @Test(priority = 2 , groups = {"Smoke Test" , "Login Test"})
     public void Login(){
-        LoginTest();
+        Elements el = new Elements();
+        LoginTest("rkaya@gmail.com","12345rk");
+        el.logout.click();
+
     }
 }

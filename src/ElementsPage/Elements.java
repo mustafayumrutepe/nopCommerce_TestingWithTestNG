@@ -34,4 +34,21 @@ public class Elements extends Parent{
 
     @FindBy(css = "[class='ico-logout']")
     public WebElement logout;
+
+    @FindBy(css = ".email")
+    public WebElement email ;
+
+    @FindBy(css = ".password")
+    public WebElement password;
+
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    public WebElement LoginButtonCCC;
+
+    @FindBy(xpath = "//a[@class='ico-account']")
+    public WebElement MyAccount;
+
+
+    @FindBy(xpath = "//div[contains(text(),'unsuccessful')]")
+    public WebElement unsuccessfully;
+
 }
