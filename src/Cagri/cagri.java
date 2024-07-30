@@ -1,17 +1,11 @@
 package Cagri;
 
 import ElementsPage.Elements;
-import ElementsPage.Parent;
 import Utility.BaseDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class cagri extends BaseDriver {
 
@@ -20,15 +14,15 @@ public class cagri extends BaseDriver {
     public void NegativeAndPositiveLoginCombinations(String email, String password){
          Elements el=new Elements();
 
-        el.Click(el.login);
-        el.SendKeys(el.email,email);
-        el.SendKeys(el.password,password);
-        el.Click(el.LoginButtonCCC);
+        el.clickFunction(el.login);
+        el.sendKeysFunction(el.email,email);
+        el.sendKeysFunction(el.password,password);
+        el.clickFunction(el.LoginButtonCCC);
 
         if (email.equals("rkaya@gmail.com")&&password.equals("12345rk")){
             Assert.assertTrue(el.MyAccount.isDisplayed());
             System.out.println("giriş Başarılı");
-            el.Click(el.logout);
+            el.clickFunction(el.logout);
         }else{
             System.out.println("giriş Hatalı");
 

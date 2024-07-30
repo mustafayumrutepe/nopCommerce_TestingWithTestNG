@@ -2,6 +2,7 @@ package ElementsPage;
 
 import Utility.BaseDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -27,13 +28,13 @@ public Parent() {this.wait=new WebDriverWait(BaseDriver.driver, Duration.ofSecon
         }
     }
 
-    public void Click(WebElement element){
+    public void clickFunction(WebElement element){
         WebDriverWait wait=new WebDriverWait(BaseDriver.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
-    public void SendKeys(WebElement element, String text){
+    public void sendKeysFunction(WebElement element, String text){
         WebDriverWait wait=new WebDriverWait(BaseDriver.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.clear();
@@ -58,14 +59,14 @@ public Parent() {this.wait=new WebDriverWait(BaseDriver.driver, Duration.ofSecon
         }
     }
 
-    public  void Select(WebElement element, String text){
+    public  void selectFunction(WebElement element, String text){
         WebDriverWait wait=new WebDriverWait(BaseDriver.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Select select=new Select(element);
         select.selectByVisibleText(text);
     }
 
-    public void Assertion(WebElement element, String text) {
+    public void assertionFunction(WebElement element, String text) {
         WebDriverWait wait=new WebDriverWait(BaseDriver.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().toLowerCase().
@@ -80,6 +81,12 @@ public Parent() {this.wait=new WebDriverWait(BaseDriver.driver, Duration.ofSecon
         Random rnd = new Random();
         int index = rnd.nextInt(element.size());
         element.get(index).click();
+    }
+
+    public void hoverFunction(WebElement element) {
+        Actions actions = new Actions(BaseDriver.driver);
+        Action action = actions.moveToElement(element).build();
+        action.perform();
     }
 
 

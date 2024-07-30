@@ -7,7 +7,6 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -64,12 +63,12 @@ public class BaseDriver {
     public static void LoginTest(String email,String password){
         Elements el = new Elements();
 
-        el.Click(el.login);
+        el.clickFunction(el.login);
         Parent.ActionsSendKeys(email);
         Parent.RobotTAB(1);
         Parent.ActionsSendKeys(password);
-        el.Click(el.loginButton);
-        el.Assertion(el.logout,"out");
+        el.clickFunction(el.loginButton);
+        el.assertionFunction(el.logout,"out");
     }
 
 
