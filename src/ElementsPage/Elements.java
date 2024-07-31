@@ -103,4 +103,21 @@ public class Elements extends Parent{
 
     @FindBy(xpath = "(//a[contains(text(),'Gift')])[1]")
     public WebElement giftCards;
+
+
+
+    @FindBy(xpath = "(//a[text()='Gift Cards '])[1]")
+    public WebElement GiftCardSec;
+
+    @FindBy(xpath = "(//*[text()='Add to cart'])[2]")
+    public WebElement PhsicCARD50;
+
+    @FindBy(css = ".recipient-name")
+    public WebElement RecipientName;
+    @FindBy(xpath = "//textarea[@class='message']")
+    public WebElement MessageBox;
+    @FindBy(xpath = "//button[@type='button'][text()='Add to cart']")
+    public WebElement LastAddButton;
+    @FindBy(xpath = "//*[contains(text(),'been added')]")
+    public WebElement BeenAdded;
 }
