@@ -59,11 +59,11 @@ public Parent() {this.wait=new WebDriverWait(BaseDriver.driver, Duration.ofSecon
         }
     }
 
-    public  void selectFunction(WebElement element, String text){
+    public  void selectFunction(WebElement element, int i){
         WebDriverWait wait=new WebDriverWait(BaseDriver.driver,Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         Select select=new Select(element);
-        select.selectByVisibleText(text);
+        select.selectByIndex(i);
     }
 
     public void assertionFunction(WebElement element, String text) {
@@ -75,7 +75,7 @@ public Parent() {this.wait=new WebDriverWait(BaseDriver.driver, Duration.ofSecon
 
     public static int RandomNumberGenerator(int border){
         return (int)(Math.random()*border);
-    }
+    }//0,1... (border-1)
 
     public void randomClick(List<WebElement> element) {
         Random rnd = new Random();

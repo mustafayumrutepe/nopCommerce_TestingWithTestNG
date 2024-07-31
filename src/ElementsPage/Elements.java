@@ -25,7 +25,7 @@ public class Elements extends Parent{
     @FindBy(id = "register-button")
     public WebElement registerButton;
 
-    @FindBy(css = "[class='page-body']")//*[contains(text(),'completed')]
+    @FindBy(css = "[class='content']")
     public WebElement verification;
 
     @FindBy(css = "[class='ico-login']")
@@ -104,7 +104,17 @@ public class Elements extends Parent{
     @FindBy(xpath = "(//a[contains(text(),'Gift')])[1]")
     public WebElement giftCards;
 
+    @FindBy(className = "page-body")
+    public WebElement desktopPage;
 
+    @FindBy(xpath = "(//*[text()='Build your own computer'])[1]")
+    public WebElement buildOwnComputer;
+
+    @FindBy(id = "product_attribute_2")
+    public WebElement selectRAM;
+
+    @FindBy(name = "product_attribute_3")
+    public List<WebElement> selectHDD;
 
     @FindBy(xpath = "(//a[text()='Gift Cards '])[1]")
     public WebElement GiftCardSec;
@@ -114,10 +124,13 @@ public class Elements extends Parent{
 
     @FindBy(css = ".recipient-name")
     public WebElement RecipientName;
+
     @FindBy(xpath = "//textarea[@class='message']")
     public WebElement MessageBox;
+
     @FindBy(xpath = "//button[@type='button'][text()='Add to cart']")
     public WebElement LastAddButton;
+
     @FindBy(xpath = "//*[contains(text(),'been added')]")
     public WebElement BeenAdded;
 }

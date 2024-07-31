@@ -3,8 +3,11 @@ package Mustafa;
 import ElementsPage.Elements;
 import ElementsPage.Parent;
 import Utility.BaseDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 
 public class mustafa extends BaseDriver {
 
@@ -18,9 +21,9 @@ public class mustafa extends BaseDriver {
         Parent.RobotTAB(1);
         Parent.ActionsSendKeys("15");
         Parent.RobotTAB(1);
-        el.selectFunction(el.DateOfBirthMonth, "December");
+        el.selectFunction(el.DateOfBirthMonth, 3);
         Parent.RobotTAB(1);
-        el.selectFunction(el.DateOfBirthYear, "1966");
+        el.selectFunction(el.DateOfBirthYear, 5);
         Parent.RobotTAB(1);
         Parent.ActionsSendKeys("rkaya@gmail.com");
         Parent.RobotTAB(1);
@@ -37,10 +40,7 @@ public class mustafa extends BaseDriver {
 
     @Test(priority = 2 , groups = {"Smoke Test" , "Login Test"})
     public void Login(){
-        //Elements el = new Elements();
         LoginTest("rkaya@gmail.com","12345rk");
-        //el.logout.click();
-
     }
 
     @Test(priority = 3 , groups = {"UI Testing" , "TAB Menu"})
@@ -84,5 +84,30 @@ public class mustafa extends BaseDriver {
         Assert.assertTrue(driver.getCurrentUrl().contains("jewelry"));
         el.clickFunction(el.giftCards);
         Assert.assertTrue(driver.getCurrentUrl().contains("gift-cards"));
+    }
+
+    @Test(priority = 5 , groups = {"UI Testing", "TAB Menu", "Order Tests"})
+    public void OrderCopmuter(){
+        Elements el = new Elements();
+
+        Assert.assertTrue(el.headerMenu.isEnabled());
+        el.hoverFunction(el.computers);
+        el.clickFunction(el.desktops);
+        Assert.assertTrue(driver.getCurrentUrl().contains("desktop"));
+        Assert.assertTrue(el.desktopPage.isEnabled());
+        el.clickFunction(el.buildOwnComputer);
+
+        int i = Parent.RandomNumberGenerator(4);
+        el.selectFunction(el.selectRAM, i);
+
+        int j = Parent.RandomNumberGenerator(2);
+        ArrayList<WebElement> list = new ArrayList<>();
+        for (WebElement e : el.selectHDD) {
+            list.add(e);
+        }
+        el.clickFunction(list.get(j));
+
+        el.clickFunction(el.LastAddButton);
+        el.assertionFunction(el.verification, "has been added");
     }
 }
