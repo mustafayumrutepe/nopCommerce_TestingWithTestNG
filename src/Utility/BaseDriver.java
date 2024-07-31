@@ -63,12 +63,12 @@ public class BaseDriver {
     public static void LoginTest(String email,String password){
         Elements el = new Elements();
 
-        el.clickFunction(el.login);
+        el.clickFunction(el.getLogin());
         Parent.ActionsSendKeys(email);
         Parent.RobotTAB(1);
         Parent.ActionsSendKeys(password);
-        el.clickFunction(el.loginButton);
-        el.assertionFunction(el.logout,"out");
+        el.clickFunction(el.getLoginButton());
+        el.assertionFunction(el.getLogout(),"out");
     }
 
 

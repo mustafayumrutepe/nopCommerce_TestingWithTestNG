@@ -11,126 +11,317 @@ public class Elements extends Parent{
     public Elements() {PageFactory.initElements(BaseDriver.driver,this);}
 
     @FindBy(xpath = "//*[text()='Register']")
-    public WebElement register;
+    private WebElement register;
 
     @FindBy(id = "FirstName")
-    public WebElement firstName;
+    private WebElement firstName;
 
     @FindBy(name = "DateOfBirthMonth")
-    public WebElement DateOfBirthMonth;
+    private WebElement DateOfBirthMonth;
 
     @FindBy(name = "DateOfBirthYear")
-    public WebElement DateOfBirthYear;
+    private WebElement DateOfBirthYear;
 
     @FindBy(id = "register-button")
-    public WebElement registerButton;
+    private WebElement registerButton;
+
+    @FindBy(css = "[class='result']")
+    private WebElement verification;
 
     @FindBy(css = "[class='content']")
-    public WebElement verification;
+    private WebElement verification2;
 
     @FindBy(css = "[class='ico-login']")
-    public WebElement login;
+    private WebElement login;
 
     @FindBy(xpath = "//*[@type='submit'][text()='Log in']")
-    public WebElement loginButton;
+    private WebElement loginButton;
 
     @FindBy(css = "[class='ico-logout']")
-    public WebElement logout;
+    private WebElement logout;
 
     @FindBy(css = ".email")
-    public WebElement email ;
+    private WebElement email ;
 
     @FindBy(css = ".password")
-    public WebElement password;
+    private WebElement password;
 
     @FindBy(xpath = "(//button[@type='submit'])[2]")
-    public WebElement LoginButtonCCC;
+    private WebElement LoginButtonCCC;
 
     @FindBy(xpath = "//a[@class='ico-account']")
-    public WebElement MyAccount;
-
+    private WebElement MyAccount;
 
     @FindBy(xpath = "//div[contains(text(),'unsuccessful')]")
-    public WebElement unsuccessfully;
+    private WebElement unsuccessfully;
 
     @FindBy(xpath = "//div[@class='header-menu']")
-    public WebElement headerMenu;
+    private WebElement headerMenu;
 
     @FindBy(xpath = "(//a[contains(text(),'Computers')])[1]")
-    public WebElement computers;
+    private WebElement computers;
 
     @FindBy(xpath = "(//a[contains(text(),'Desktop')])[1]")
-    public WebElement desktops;
+    private WebElement desktops;
 
     @FindBy(xpath = "(//a[contains(text(),'Notebook')])[1]")
-    public WebElement notebooks;
+    private WebElement notebooks;
 
     @FindBy(xpath = "(//a[contains(text(),'Software')])[1]")
-    public WebElement software;
+    private WebElement software;
 
     @FindBy(xpath = "(//a[contains(text(),'Electronics')])[1]")
-    public WebElement electronics;
+    private WebElement electronics;
 
     @FindBy(xpath = "(//a[contains(text(),'Camera')])[1]")
-    public WebElement cameraPhoto;
+    private WebElement cameraPhoto;
 
     @FindBy(xpath = "(//a[contains(text(),'Cell')])[1]")
-    public WebElement cellPhones;
+    private WebElement cellPhones;
 
     @FindBy(xpath = "(//a[contains(text(),'Others')])[1]")
-    public WebElement others;
+    private WebElement others;
 
     @FindBy(xpath = "(//a[contains(text(),'Apparel')])[1]")
-    public WebElement apparel;
+    private WebElement apparel;
 
     @FindBy(xpath = "(//a[contains(text(),'Shoes')])[1]")
-    public WebElement shoes;
+    private WebElement shoes;
 
     @FindBy(xpath = "(//a[contains(text(),'Clothing')])[1]")
-    public WebElement clothing;
+    private WebElement clothing;
 
     @FindBy(xpath = "(//a[contains(text(),'Accessories')])[1]")
-    public WebElement accessories;
+    private WebElement accessories;
 
     @FindBy(xpath = "(//a[contains(text(),'downloads')])[1]")
-    public WebElement digitalDownloads;
+    private WebElement digitalDownloads;
 
     @FindBy(xpath = "(//a[contains(text(),'Books')])[1]")
-    public WebElement books;
+    private WebElement books;
 
     @FindBy(xpath = "(//a[contains(text(),'Jewelry')])[1]")
-    public WebElement jewelry;
+    private WebElement jewelry;
 
     @FindBy(xpath = "(//a[contains(text(),'Gift')])[1]")
-    public WebElement giftCards;
+    private WebElement giftCards;
 
     @FindBy(className = "page-body")
-    public WebElement desktopPage;
+    private WebElement desktopPage;
 
     @FindBy(xpath = "(//*[text()='Build your own computer'])[1]")
-    public WebElement buildOwnComputer;
+    private WebElement buildOwnComputer;
 
     @FindBy(id = "product_attribute_2")
-    public WebElement selectRAM;
+    private WebElement selectRAM;
 
     @FindBy(name = "product_attribute_3")
-    public List<WebElement> selectHDD;
+    private List<WebElement> selectHDD;
 
     @FindBy(xpath = "(//a[text()='Gift Cards '])[1]")
-    public WebElement GiftCardSec;
+    private WebElement GiftCardSec;
 
     @FindBy(xpath = "(//*[text()='Add to cart'])[2]")
-    public WebElement PhsicCARD50;
+    private WebElement PhsicCARD50;
 
     @FindBy(css = ".recipient-name")
-    public WebElement RecipientName;
+    private WebElement RecipientName;
 
     @FindBy(xpath = "//textarea[@class='message']")
-    public WebElement MessageBox;
+    private WebElement MessageBox;
 
     @FindBy(xpath = "//button[@type='button'][text()='Add to cart']")
-    public WebElement LastAddButton;
+    private WebElement LastAddButton;
 
     @FindBy(xpath = "//*[contains(text(),'been added')]")
-    public WebElement BeenAdded;
+    private WebElement BeenAdded;
+
+    @FindBy(className = "item-box")
+    private List<WebElement> notebookList;
+
+    @FindBy(id = "small-searchterms")
+    private WebElement searchBox;
+
+    @FindBy(className = "product-name")
+    private WebElement productName;
+
+    public WebElement getProductName() {
+        return productName;
+    }
+
+    public WebElement getSearchBox() {
+        return searchBox;
+    }
+
+    public List<WebElement> getNotebookList() {
+        return notebookList;
+    }
+
+    public WebElement getRegister() {
+        return register;
+    }
+
+    public WebElement getFirstName() {
+        return firstName;
+    }
+
+    public WebElement getDateOfBirthMonth() {
+        return DateOfBirthMonth;
+    }
+
+    public WebElement getDateOfBirthYear() {
+        return DateOfBirthYear;
+    }
+
+    public WebElement getRegisterButton() {
+        return registerButton;
+    }
+
+    public WebElement getVerification() {
+        return verification;
+    }
+
+    public WebElement getVerification2() {
+        return verification2;
+    }
+
+    public WebElement getLogin() {
+        return login;
+    }
+
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
+    public WebElement getLogout() {
+        return logout;
+    }
+
+    public WebElement getEmail() {
+        return email;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public WebElement getLoginButtonCCC() {
+        return LoginButtonCCC;
+    }
+
+    public WebElement getMyAccount() {
+        return MyAccount;
+    }
+
+    public WebElement getUnsuccessfully() {
+        return unsuccessfully;
+    }
+
+    public WebElement getHeaderMenu() {
+        return headerMenu;
+    }
+
+    public WebElement getComputers() {
+        return computers;
+    }
+
+    public WebElement getDesktops() {
+        return desktops;
+    }
+
+    public WebElement getNotebooks() {
+        return notebooks;
+    }
+
+    public WebElement getSoftware() {
+        return software;
+    }
+
+    public WebElement getElectronics() {
+        return electronics;
+    }
+
+    public WebElement getCameraPhoto() {
+        return cameraPhoto;
+    }
+
+    public WebElement getCellPhones() {
+        return cellPhones;
+    }
+
+    public WebElement getOthers() {
+        return others;
+    }
+
+    public WebElement getApparel() {
+        return apparel;
+    }
+
+    public WebElement getShoes() {
+        return shoes;
+    }
+
+    public WebElement getClothing() {
+        return clothing;
+    }
+
+    public WebElement getAccessories() {
+        return accessories;
+    }
+
+    public WebElement getDigitalDownloads() {
+        return digitalDownloads;
+    }
+
+    public WebElement getBooks() {
+        return books;
+    }
+
+    public WebElement getJewelry() {
+        return jewelry;
+    }
+
+    public WebElement getGiftCards() {
+        return giftCards;
+    }
+
+    public WebElement getDesktopPage() {
+        return desktopPage;
+    }
+
+    public WebElement getBuildOwnComputer() {
+        return buildOwnComputer;
+    }
+
+    public WebElement getSelectRAM() {
+        return selectRAM;
+    }
+
+    public List<WebElement> getSelectHDD() {
+        return selectHDD;
+    }
+
+    public WebElement getGiftCardSec() {
+        return GiftCardSec;
+    }
+
+    public WebElement getPhsicCARD50() {
+        return PhsicCARD50;
+    }
+
+    public WebElement getRecipientName() {
+        return RecipientName;
+    }
+
+    public WebElement getMessageBox() {
+        return MessageBox;
+    }
+
+    public WebElement getLastAddButton() {
+        return LastAddButton;
+    }
+
+    public WebElement getBeenAdded() {
+        return BeenAdded;
+    }
 }
