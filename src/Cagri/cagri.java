@@ -43,6 +43,19 @@ public class cagri extends BaseDriver {
         return data;
     }
 
+    @Test(priority = 4 , groups = {"UI Testing" , "TAB Menu"})
+    public void GiftOrderingProcess(){
+        LoginTest("rkaya@gmail.com","12345rk");
+        Elements el=new Elements();
+        el.clickFunction(el.GiftCardSec);
+        el.clickFunction(el.PhsicCARD50);
+        el.sendKeysFunction(el.RecipientName,"Ekrem İMARO");
+        el.sendKeysFunction(el.MessageBox,"Mustafa Sarıgül vurdu ve Gol oldu. GGG000000000000000000000000000000000000000000000000000000000000llll");
+        el.clickFunction(el.LastAddButton);
+        el.assertionFunction(el.BeenAdded,"been added");
+
+    }
+
 }
 
 
