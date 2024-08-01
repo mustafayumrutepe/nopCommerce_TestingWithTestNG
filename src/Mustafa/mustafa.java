@@ -113,8 +113,9 @@ public class mustafa extends BaseDriver {
         el.assertionFunction(el.getVerification2(), text2);
     }
 
+    @Parameters("search")
     @Test(priority = 3 , groups = {"UI Testing" , "TAB Menu"})
-    public void TabMenuProductControl(){
+    public void TabMenuProductControl(String string){
 
         Elements el = new Elements();
 
@@ -125,16 +126,16 @@ public class mustafa extends BaseDriver {
         for (WebElement e : el.getNotebookList())
             list.add(e);
 
-        el.sendKeysFunction(el.getSearchBox(), "notebook");
+        el.sendKeysFunction(el.getSearchBox(), string);
 
         int i = Parent.RandomNumberGenerator(6);
         el.clickFunction(list.get(i));
 
         for (int j = 0; j < list.size(); j++) {
-            if ((list.get(j).getAttribute("href")).equals(el.getProductName().getAttribute("href")))
-                System.out.println("mission has done");
+            if (list.get(j).equals(el.getProductName()))
+                System.out.println("it equals");
             else
-                System.out.println("mission has not done");
+                System.out.println("it does not equal");
         }
     }
 

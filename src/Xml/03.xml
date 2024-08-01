@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="mySuit">
+
+    <test name="myTest1">
+
+        <classes>
+            <class name="Mustafa.mustafa">
+            <methods>
+                <parameter name="search" value="notebook"></parameter>
+                <include name="TabMenuProductControl"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+
+<!-- include hata veriyor -->
