@@ -3,7 +3,11 @@ package Mustafa;
 import ElementsPage.Elements;
 import ElementsPage.Parent;
 import Utility.BaseDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -115,28 +119,27 @@ public class mustafa extends BaseDriver {
 
     @Parameters("search")
     @Test(priority = 3 , groups = {"UI Testing" , "TAB Menu"})
-    public void TabMenuProductControl(String string){
-
+    public void TabMenuProductControl(String string) {
         Elements el = new Elements();
-
         el.hoverFunction(el.getComputers());
         el.clickFunction(el.getNotebooks());
 
-        ArrayList<WebElement> list = new ArrayList<>();
-        for (WebElement e : el.getNotebookList())
-            list.add(e);
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < el.getNotebookList().size(); i++) {
+            list.add(el.getNotebookList().get(i).getText());
+        }
 
         el.sendKeysFunction(el.getSearchBox(), string);
-
         int i = Parent.RandomNumberGenerator(6);
-        el.clickFunction(list.get(i));
+        el.clickFunction(el.getNotebookList().get(i));
 
+        boolean check=false;
         for (int j = 0; j < list.size(); j++) {
-            if (list.get(j).equals(el.getProductName()))
-                System.out.println("it equals");
-            else
-                System.out.println("it does not equal");
+            System.out.println(list.get(j).substring(0,10)+" - "+el.getProductName().getText().substring(0,10));
+            if (list.get(j).substring(0,10).equals(el.getProductName().getText().substring(0,10)))
+                check = true;
         }
+        Assert.assertEquals(check, true,"element not found in list");
     }
-
 }
+

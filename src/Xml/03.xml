@@ -7,7 +7,7 @@
         <classes>
             <class name="Mustafa.mustafa">
             <methods>
-                <parameter name="search" value="notebook"></parameter>
+                <parameter name="search" value="notebook, Keys.ENTER"></parameter>
                 <include name="TabMenuProductControl"/>
             </methods>
             </class>

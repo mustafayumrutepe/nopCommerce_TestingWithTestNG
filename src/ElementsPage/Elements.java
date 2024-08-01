@@ -136,7 +136,7 @@ public class Elements extends Parent{
     @FindBy(xpath = "//*[contains(text(),'been added')]")
     private WebElement BeenAdded;
 
-    @FindBy(className = "item-box")
+    @FindBy(xpath = "//div[@class='item-box']") //[class='item-grid']
     private List<WebElement> notebookList;
 
     @FindBy(id = "small-searchterms")
@@ -218,10 +218,6 @@ public class Elements extends Parent{
 
     public WebElement getMyAccount() {
         return MyAccount;
-    }
-
-    public WebElement getUnsuccessfully() {
-        return unsuccessfully;
     }
 
     public WebElement getHeaderMenu() {
