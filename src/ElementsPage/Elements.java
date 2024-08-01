@@ -145,6 +145,13 @@ public class Elements extends Parent{
     @FindBy(className = "product-name")
     private WebElement productName;
 
+    @FindBy(xpath = "//*[text()='Adobe Photoshop CS4']")
+    private WebElement PicAdoPhoto;
+
+
+
+    public WebElement getPicAdoPhoto() {return PicAdoPhoto;}
+
     public WebElement getProductName() {
         return productName;
     }

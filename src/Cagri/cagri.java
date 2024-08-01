@@ -1,12 +1,17 @@
 package Cagri;
 
 import ElementsPage.Elements;
+import ElementsPage.Parent;
 import Utility.BaseDriver;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
+import org.testng.annotations.Parameters;
 public class cagri extends BaseDriver {
 
 
@@ -53,6 +58,20 @@ public class cagri extends BaseDriver {
         el.sendKeysFunction(el.getMessageBox(),"Mustafa Sarıgül vurdu ve Gol oldu. GGG000000000000000000000000000000000000000000000000000000000000llll");
         el.clickFunction(el.getLastAddButton());
         el.assertionFunction(el.getBeenAdded(),"been added");
+
+    }
+    @Parameters("text")
+    @Test(priority = 5,groups = {"UI Testing","Search","Smoke","Regression"})
+    public void ParameterSearchProcess(String text){
+        LoginTest("r2kaya@gmail.com","12345rk");
+        Elements el=new Elements();
+        el.sendKeysFunction(el.getSearchBox(),text);
+        Actions actions = new Actions(BaseDriver.driver);
+        actions.sendKeys(Keys.ENTER).build().perform();
+        el.assertionFunction(el.getPicAdoPhoto(),"adobe photoshop");
+
+
+
 
     }
 
