@@ -5,10 +5,9 @@
     <test name="myTest1">
 
         <classes>
-            <class name="Mustafa.mustafa"> </class>
+            <class name="Tests.TestMethods"> </class>
         </classes>
     </test>
 
 </suite>
 
-<!-- include hata veriyor -->

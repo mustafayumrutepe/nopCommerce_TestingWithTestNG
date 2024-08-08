@@ -6,7 +6,7 @@
 
 
         <classes>
-            <class name="Cagri.cagri">
+            <class name="Tests.TestMethods">
                 <methods>
                     <parameter name="text" value="Adobe Photoshop CS4"></parameter>
                     <include name="ParameterSearchProcess"/>

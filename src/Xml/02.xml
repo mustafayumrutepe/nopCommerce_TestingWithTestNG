@@ -8,7 +8,7 @@
         <parameter name="text2" value="has been added"></parameter>
 
         <classes>
-            <class name="Mustafa.mustafa">
+            <class name="Tests.TestMethods">
             <methods>
                 <include name="OrderCopmuter"/>
             </methods>
@@ -18,4 +18,3 @@
 
 </suite>
 
-<!-- include hata veriyor -->
